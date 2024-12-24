@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #222;
+    }
+
+    .stopwatch {
+      text-align: center;
+      /* font-size: 2em; */
+      background: #161010;
+      padding: 80px 100px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      width: 50vw;
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .time {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #f9ebeb;
+      display: flex;
+      margin-top: 30px;
+      justify-content: center;
+      align-items: center;
+      /* max-width: min-content; */
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button.start {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    button.stop {
+      background-color: #f44336;
+      color: white;
+    }
+
+    button.reset {
+      background-color: #2196f3;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+    .gradient-text {
+  font-size: 8rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff007c, #ff8800, #00d4ff, #8a2be2);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 3s infinite;
+  text-align: center;
+}
+
+/* Animation for the gradient */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+  #mili-seconds{
+    font-size: xx-large ;
+  }
+  #minutes h6{
+    border-radius: 50%;
+    
+  }
+  </style>
+</head>
+<body>
+  <div class="stopwatch">
+    <div class="time">
+      <h3 id="minutes" class="gradient-text">00</h3>
+      <h6> : </h6>
+      <h3 id="seconds" class="gradient-text">00</h3>
+     
+      <h3 id="mili-seconds" class="gradient-text">00</h3>
+    </div>
+    <div class="buttons">
+      <button onclick="start()" class="start">Start</button>
+      <button onclick="stop()" class="stop">Stop</button>
+      <button onclick="reset()" class="reset">Reset</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
